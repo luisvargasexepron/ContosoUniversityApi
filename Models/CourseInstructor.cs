@@ -1,4 +1,6 @@
-﻿namespace ContosoUniversity.Models
+﻿using ContosoUniversityApi.Models;
+
+namespace ContosoUniversityApi.Models
 {
     public class CourseInstructor
     {

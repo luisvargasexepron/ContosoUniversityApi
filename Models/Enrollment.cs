@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using ContosoUniversityApi.Models;
 
-namespace ContosoUniversity.Models
+namespace ContosoUniversityApi.Models
 {
     public enum Grade
     {

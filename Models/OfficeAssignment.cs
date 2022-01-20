@@ -1,15 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ContosoUniversity.Models
+namespace ContosoUniversityApi.Models;
+
+public class OfficeAssignment
 {
-    public class OfficeAssignment
-    {
-        [Key] public int InstructorId { get; set; }
+    [Key] public int InstructorId { get; set; }
 
-        [StringLength(50)]
-        [Display(Name = "Office Location")]
-        public string Location { get; set; }
+    [StringLength(50)]
+    [Display(Name = "Office Location")]
+    public string Location { get; set; }
 
-        public Instructor Instructor { get; set; }
-    }
+    public Instructor Instructor { get; set; }
 }
