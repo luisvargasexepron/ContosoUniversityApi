@@ -7,29 +7,29 @@ namespace ContosoUniversityApi.Models
 {
     public class Student
     {
-        public int Id { get; set; }
+        public int id { get; set; }
         
         [Required]
         [StringLength(50)]
         [Display(Name = "Last Name")]
         [RegularExpression(@"^[A-Z]+[a-zA-Z]*$")]
-        public string LastName { get; set; }
+        public string lastName { get; set; }
         
         [Required]
         [StringLength(50, ErrorMessage = "First name cannot be longer than 50 characters.")]
         [Column("FirstName")]
         [Display(Name = "First Name")]
         [RegularExpression(@"^[A-Z]+[a-zA-Z]*$")]
-        public string FirstMidName { get; set; }
+        public string firstName { get; set; }
         
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Enrollment Date")]
-        public DateTime EnrollmentDate { get; set; }
+        public DateTime enrollmentDate { get; set; }
         
         [Display(Name = "Full Name")]
-        public string FullName => LastName + ", " + FirstMidName;
+        public string fullName => lastName + ", " + firstName;
 
-        public ICollection<Enrollment> Enrollments { get; set; }
+        public ICollection<Enrollment> enrollments { get; set; }
     }
 }

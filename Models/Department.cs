@@ -8,23 +8,23 @@ namespace ContosoUniversityApi.Models
 {
     public class Department
     {
-        public int Id { get; set; }
+        public int id { get; set; }
 
         [StringLength(50, MinimumLength = 3)]
-        public string Name { get; set; }
+        public string name { get; set; }
 
         [DataType(DataType.Currency)]
         [Column(TypeName = "money")]
-        public decimal Budget { get; set; }
+        public decimal budget { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Start Date")]
-        public DateTime StartDate { get; set; }
+        public DateTime startDate { get; set; }
 
-        public int? AdministratorId { get; set; }
-        public Instructor Administrator { get; set; }
+        public int? administratorId { get; set; }
+        public Instructor administrator { get; set; }
 
-        public ICollection<Course> Courses { get; set; }
+        public ICollection<Course> courses { get; set; }
     }
 }

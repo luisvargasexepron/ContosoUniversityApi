@@ -8,29 +8,29 @@ namespace ContosoUniversityApi.Models
 {
     public class Instructor
     {
-        public int Id { get; set; }
+        public int id { get; set; }
 
         [Required]
         [Display(Name = "Last Name")]
         [StringLength(50)]
-        public string LastName { get; set; }
+        public string lastName { get; set; }
 
         [Required]
         [Column("FirstName")]
         [Display(Name = "First Name")]
         [StringLength(50)]
-        public string FirstMidName { get; set; }
+        public string firstName { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Hire Date")]
-        public DateTime HireDate { get; set; }
+        public DateTime hireDate { get; set; }
 
         [Display(Name = "Full Name")]
-        public string FullName => LastName + ", " + FirstMidName;
+        public string fullName => lastName + ", " + firstName;
 
-        public List<CourseInstructor> CourseInstructors { get; set; }
-        public ICollection<Course> Courses { get; set; }
-        public OfficeAssignment OfficeAssignment { get; set; }
+        public ICollection<CourseInstructor> courseInstructors { get; set; }
+        public ICollection<Course> courses { get; set; }
+        public OfficeAssignment officeAssignment { get; set; }
     }
 }

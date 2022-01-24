@@ -9,5 +9,5 @@ namespace ContosoUniversityApi.Controllers;
 public class StudentsController : AODataControllerBase<Student>
 {
     public StudentsController(AppContext context)
-        : base(context, "Student", e => e.Id) { }
+        : base(context, "Student", e => e.id) { }
 }

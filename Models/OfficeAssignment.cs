@@ -8,7 +8,7 @@ public class OfficeAssignment
 
     [StringLength(50)]
     [Display(Name = "Office Location")]
-    public string Location { get; set; }
+    public string location { get; set; }
 
-    public Instructor Instructor { get; set; }
+    public Instructor instructor { get; set; }
 }

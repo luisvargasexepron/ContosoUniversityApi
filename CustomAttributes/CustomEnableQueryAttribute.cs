@@ -8,21 +8,16 @@ public class CustomEnableQueryAttribute : EnableQueryAttribute
 {
     public override IQueryable ApplyQuery(IQueryable queryable, ODataQueryOptions queryOptions)
     {
-        dynamic currentType = queryable;
-        ODataQuerySettings objSettings = new ODataQuerySettings();
+        var objSettings = new ODataQuerySettings();
         if (queryOptions.Filter != null)
         {
-            currentType = queryOptions.Filter.ApplyTo(queryable, objSettings);
+            queryable = queryOptions.Filter.ApplyTo(queryable, objSettings);
         }
         if (queryOptions.Count != null)
         {
-            try
-            {
-                var count = (currentType as IQueryable<object>).Count();
-                queryOptions.Request.HttpContext.Response.Headers.Add("x-total-items", count.ToString());
-                queryOptions.Request.HttpContext.Response.Headers.Add("Access-Control-Expose-Headers", "x-total-items");
-            }
-            catch (Exception) { }
+            var count = (queryable as IQueryable<object>)?.Count() ?? 0;
+            queryOptions.Request.HttpContext.Response.Headers.Add("x-total-items", count.ToString());
+            queryOptions.Request.HttpContext.Response.Headers.Add("Access-Control-Expose-Headers", "x-total-items");
         }
 
         return base.ApplyQuery(queryable, queryOptions);

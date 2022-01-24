@@ -10,14 +10,14 @@ namespace ContosoUniversityApi.Models
     
     public class Enrollment
     {
-        public int Id { get; set; }
-        public int CourseId { get; set; }
-        public int StudentId { get; set; }
+        public int id { get; set; }
+        public int courseId { get; set; }
+        public int studentId { get; set; }
         
         [DisplayFormat(NullDisplayText = "No grade")]
-        public Grade? Grade { get; set; }
+        public Grade? grade { get; set; }
 
-        public Course Course { get; set; }
-        public Student Student { get; set; }
+        public Course course { get; set; }
+        public Student student { get; set; }
     }
 }
