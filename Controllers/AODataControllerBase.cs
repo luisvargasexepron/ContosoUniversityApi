@@ -50,7 +50,7 @@ public abstract class AODataControllerBase<TEntity> : ControllerBase where TEnti
     {
         if (!_existsById(id))
         {
-            return NotFound();
+            return NotFound($"{_entityName} with id '{id}' not found");
         }
 
         return Ok(_entityByIdQuery(id));
@@ -64,12 +64,12 @@ public abstract class AODataControllerBase<TEntity> : ControllerBase where TEnti
     {
         if (id != _getEntityId(entity))
         {
-            return BadRequest("The Id specified in path is different from the body Id");
+            return BadRequest("The id specified in path is different from the body id");
         }
 
         if (!_existsById(id))
         {
-            return NotFound($"{_entityName} with Id '{id}' not found");
+            return NotFound($"{_entityName} with id '{id}' not found");
         }
 
         _context.Entry(entity).State = EntityState.Modified;
@@ -87,14 +87,14 @@ public abstract class AODataControllerBase<TEntity> : ControllerBase where TEnti
     {
         if (_getEntityId(entity) != 0 && _existsById(_getEntityId(entity)))
         {
-            return Conflict($"{_entityName} with specified Id already Exists");
+            return Conflict($"{_entityName} with specified id already Exists");
         }
 
         _dbSet.Add(entity);
         _context.SaveChanges();
 
         var entityQuery = _entityByIdQuery(_getEntityId(entity)).AsNoTracking();
-        return CreatedAtAction($"Get{_entityName}ById", new {id = _getEntityId(entity)}, entityQuery);
+        return CreatedAtAction($"GetById", new {id = _getEntityId(entity)}, entityQuery);
     }
 
     // DELETE: api/{Entity}/5
@@ -103,7 +103,7 @@ public abstract class AODataControllerBase<TEntity> : ControllerBase where TEnti
     {
         if (!_existsById(id))
         {
-            return NotFound();
+            return NotFound($"{_entityName} with id '{id}' not found");
         }
 
         var entity = Activator.CreateInstance<TEntity>();

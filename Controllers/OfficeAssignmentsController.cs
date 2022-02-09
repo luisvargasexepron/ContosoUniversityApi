@@ -13,5 +13,5 @@ namespace ContosoUniversityApi.Controllers;
 public class OfficeAssignmentsController : AODataControllerBase<OfficeAssignment>
 {
     public OfficeAssignmentsController(AppContext context)
-        : base(context, "OfficeAssignment", e => e.InstructorId) {}
+        : base(context, nameof(OfficeAssignment), e => e.InstructorId) {}
 }
