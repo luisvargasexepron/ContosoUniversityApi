@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoUniversityApi", "ContosoUniversityApi\ContosoUniversityApi.csproj", "{BBF30D0C-82B8-46D8-B961-19D8BA57F620}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoUniversityApi.IntegrationTests", "ContosoUniversityApi.IntegrationTests\ContosoUniversityApi.IntegrationTests.csproj", "{02E24EDA-7133-4BE7-A488-AA73CFAF2F1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BBF30D0C-82B8-46D8-B961-19D8BA57F620}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBF30D0C-82B8-46D8-B961-19D8BA57F620}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBF30D0C-82B8-46D8-B961-19D8BA57F620}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02E24EDA-7133-4BE7-A488-AA73CFAF2F1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02E24EDA-7133-4BE7-A488-AA73CFAF2F1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02E24EDA-7133-4BE7-A488-AA73CFAF2F1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02E24EDA-7133-4BE7-A488-AA73CFAF2F1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
